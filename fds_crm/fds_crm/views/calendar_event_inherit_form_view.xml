@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="calendar_event_inherit" model="ir.ui.view">
+        <field name="name">Calendar Event Inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_calendar"></field>
+        <field name="arch" type="xml">
+            <calendar js_class="attendee_calendar" string="Meetings" date_start="start" date_stop="stop" date_delay="duration"
+                event_open_popup="true"
+                event_limit="5"
+                color="partner_id">
+                <field name="fds_attendees_custom"/>
+            </calendar>
+        </field>
+    </record>
+</odoo>
